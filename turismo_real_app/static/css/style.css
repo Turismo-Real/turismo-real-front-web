@@ -1,82 +1,189 @@
 *{
-    margin: 10px;
-    padding: 10px;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    color: #fff;
+    text-shadow: 0.1em 0.1em #333;
+    font-size: 17px;
+}
+
+a:hover{
+    color: #B5B7B8;
 }
 
 .padre{
     display: flex;
     flex-flow: column nowrap;
 }
+.margen-interno{
+    padding: 0 50px;
+}
 .header{
-    background: #000;
+    background: url("/static/imagenes/bg-2.jpg") 50% 0 no-repeat fixed;
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
     display: flex;
     flex-flow: column nowrap;
 }
 .menu{
-    background: #2d4059;
+    background: rgba(0, 0, 0, .1);
     display: flex;
     flex-flow: row nowrap;
-    height: 100px;
+    height: 75px;
     align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 35);
 }
 .logo{
-    background: #ea5455;
+    
     flex: 1 1 auto;
-    height: 30px;
+}
+.logo img{
+    padding-left: 10px;
 }
 .nav{
-    background: #ea5455;
+    
     flex: 5 1 auto;
-    height: 30px;
+    
 }
+
+.nav a{
+    text-transform: uppercase;
+    padding: 0 20px;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+
 .social{
-    background: #ea5455;
+    
     flex: 1 1 auto;
-    height: 30px;
+    display: flex;
+    
 }
+
+.social a{
+    padding: 0 5px;
+}
+
 .texto-principal{
-    background: #f07b3f;
+    /*background: #f07b3f;*/
+    height: 580px;
+    display: flex;
+    align-items: center;
+    text-shadow: 0.1em 0.1em #333;
 }
 h1{
-    background: #FFD460;
+    font-family: 'Lora', serif;
+    font-size: 21px;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.6;
 }
 .section{
-    background: #000;
+    background: #f7f7f7;
     display: flex;
 }
 .departamento{
-    background: #4e4e6e;
+    background: #f7f7f7;
     flex: 2 1 auto;
     display: flex;
     flex-flow: row wrap;
 }
 .article{
-    background: #1f6cb0;
     flex: 1 1 40%;
+    color: #444;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 10px 10px 0 0px;
+    flex: 1 1 45%;
+    background: #ececec ;
+}
+.article a{
+    color: #fff;
+    font-size: 13px;
+    padding: 10px;
+    background: #000;
+    margin: 10px 0;
+    display: inline-block;
+}
+.article a:hover{
+    background: #444;
+}
+.article img{
+    width: 100%;
+}
+h3{
+    color: #fff;
+    font-size: 13px;
+    padding: 10px 0;
+    margin-top: -80px;
+    text-shadow: 0.1em 0.1em #333;
+
+}
+h2{
+    font-size: 25px;
+    text-transform: uppercase;
+    padding: 0px 0 10px 0;
+    color: #fff;
+    text-shadow: 0.1em 0.1em #333;
 }
 .navegacion{
-    background: #70a3c4;
+    background: #000;
     flex: 1 1 100%;
+    margin: 10px 10px 0 0px;
+}
+.navegacion a{
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 0 10px;
+    letter-spacing: 2px;
 }
 .aside{
-    background: #f73f52;
     flex: 1 1 auto;
+    margin: 10px 5px 10px 0;
 }
-.nose{
-    background: #70a3c4;
+.aside img{
+    width: 300px;
+    height: 250px;
+
 }
+h4{
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+
 .footer{
     background: #000;
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 .pie{
-    background: #e6af2e;
-    width: 300px;
+    text-align: center;
+    
     
 }
-@media all and (max-width: 800px){
+.pie a{
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 0 10px;
+    letter-spacing: 10px;
+}
+@media all and (max-width: 1120px){
     .section{
         flex-direction: column;
     }
@@ -88,14 +195,32 @@ h1{
         display: flex;
         justify-content: center;
     }
-}
-@media all and (max-width: 600px){
-    .departamento{
-        flex-direction: column;
+    .social a{
+    
+        flex: 1 1 auto;
+        display: flex;
+        margin-top: 10px;       
+    }
+    h1{
+        font-size: 15px;
+    }
+    .texto-principal{
+        height: 450px;
     }
     
 }
-@media all and (max-width: 400px){
+@media all and (max-width: 762px){
+    .departamento{
+        flex-direction: column;
+    }
+    .aside{
+        flex-direction: column;
+    }
+    .aside img{
+        width: 100%
+    }
+}
+@media all and (max-width: 650px){
     .aside{
         flex-direction: column;
     }
