@@ -1,48 +1,145 @@
 {% load static %}
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script>
+var current = 0;
+var imagenes = new Array();
+ 
+$(document).ready(function() {
+    var numImages = 6;
+    if (numImages <= 3) {
+        $('.right-arrow').css('display', 'none');
+        $('.left-arrow').css('display', 'none');
+    }
+ 
+    $('.left-arrow').on('click',function() {
+        if (current > 0) {
+            current = current - 1;
+        } else {
+            current = numImages - 3;
+        }
+ 
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+ 
+        return false;
+    });
+ 
+    $('.left-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+ 
+    $('.right-arrow').on('hover', function() {
+        $(this).css('opacity','0.5');
+    }, function() {
+        $(this).css('opacity','1');
+    });
+ 
+    $('.right-arrow').on('click', function() {
+        if (numImages > current + 3) {
+            current = current+1;
+        } else {
+            current = 0;
+        }
+ 
+        $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+ 
+        return false;
+    }); 
+ });
+</script>
+
 <!DOCTYPE html>
 
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <title>Turismo Real - Departamento</title>
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=0, maximum-scale=0, minimum-scale=0">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
         <link type='text/css' href='{%static "css/style.css"%}' rel='stylesheet'/>
     </head>
     <body bgcolor="#eebd1b"> 
-        <header class="header">
-            <div class="menu">
-                <div class="logo"></div>
-                <div class="nav"></div>
-                <div class="social"></div>
-            </div>
-            <div class="texto-principal">
-                <h1>asd</h1>
+        <header class="header ">
+            <div class="menu margen-interno">
+                <div class="logo">
+                    <a href=""><img src='{%static "imagenes/logo.png"%}' alt="logo" width="70px" height="70px"></a>
+                </div>
+                <div class="nav">
+                    <a href="/turismo_real_app/">sasa Inicio</a>
+                    <a href="#">Inicio</a>
+                    <a href="#">Inicio</a>
+                </div>
+                <div class="social">
+                    <div><a href="#">Login</a></div>
+                </div>
             </div>
         </header>
         <div class="padre">
-            <section class="section">
-                <div class="departamento">
-                    <article style="background: #1f6cb0; display: 1 1 40%; width: 800px; height: 500px;"></article>
-                    <nav style="background: #70a3c4; display: 1 1 40%; width: 600px; height: 80px; margin-left: 100px;"></nav>
+            <section class="section margen-interno">
+                <div class="vdepartamento">
+                    <article id="article">
+                        <div id="carrusel">
+                            <a href="#" class="left-arrow"><img width="25" height="25" src='{%static "imagenes/back.png"%}' /></a>
+                            <a href="#" class="right-arrow"><img width="25" height="25" src='{%static "imagenes/next.png"%}' /></a>
+                            <div class="carrusel">
+                                <div id="product_0">
+                                    <img src='{%static "imagenes/departamento.jpg"%}' width="300" height="250" />
+                                </div>
+                                <div id="product_1">
+                                    <img src='{%static "imagenes/departamento.jpg"%}' width="300" height="250" />
+                                </div>
+                                <div id="product_2">
+                                    <img src='{%static "imagenes/departamento.jpg"%}' width="300" height="250" />
+                                </div>
+                                <div id="product_3">
+                                    <img src='{%static "imagenes/departamento.jpg"%}' width="300" height="250" />
+                                </div>
+                                <div id="product_4">
+                                    <img src='{%static "imagenes/departamento.jpg"%}' width="300" height="250" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </article>
+                    <div class="descripcion">
+                        <h3>21 de Octubre 2021</h3>
+                        <h2>Departamento Santa Lucía</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem aliquid nihil quia dicta, non ipsam incidunt, blanditiis illum dolores qui quas suscipit? Fuga nesciunt dicta labore cum voluptas cupiditate doloribus?</p>    
+                    </div>
                 </div>
                 <aside class="aside">
-                    <div style='text-align: right; background: #70a3c4; width: 170px;'>100 M2</div>
-                    <div style='text-align: right; background: #70a3c4;'>Santiago Centro</div>
-                    <div style='text-align: right; background: #70a3c4;'>$1.000.000</div>
-                    <div> cantidad de residentes<input type="number" id="persons" min="1" max="15" value="1" style="margin-left: 46px;"></div>
-                    <a style="cursor: pointer; background-color: aqua; display: inline-block; text-align: center;">Realizar reserva</a>
-                     
-                </aside>  
+                    <div class="nose">
+                        <h4 id="rightD">10M2</h4>
+                        <h4 id="rightD">Santiago</h4>
+                        <h4 id="rightD">$100.000</h4>
+                        <h4 id="rightD">Personas a hospedar   <input type="number" min="1" max="15" value="1" style="padding: 8px; margin-left: 8px;"></h4>
+                        <h4 id="rightD" ><a class="boton" href="#" >Reservar</a></h4>
+                    </div>
+                    <div class="nose">
+                        <h4>Publicidad</h4>
+                    </div>
+                    <div class="nose">
+                        <h4>Publicidad</h4>
+                        <img src='{%static "imagenes/publ.jpg"%}' alt="departamento">
+                    </div>
+                    <div class="nose">
+                        <h4>Publicidad</h4>
+                        <img src='{%static "imagenes/publ.jpg"%}' alt="departamento">
+                    </div>
+                    <div class="nose">
+                        <h4>Publicidad</h4>
+                        <img src='{%static "imagenes/publ.jpg"%}' alt="departamento">
+                    </div>
+                </aside>
             </section>
-            <div style="background-color: azure;">
-                <h1 style="background-color: transparent;">Descripcion</h1>
-                <label>
-                    afajgfjaskgflasgfkasgfkasgfkjagsf
-                    asfgkasjfgkasjfgkasjgfkasjgfkasjgfkjasg 
-                </label>
-            </div>
-            <footer class="footer">
-                <nav class="pie"></nav>
+            <footer class="footer margen-interno">
+                <nav class="pie">
+                    <a href="#">Desarrollado por Nadie</a>
+                </nav>
             </footer>
         </div>
         

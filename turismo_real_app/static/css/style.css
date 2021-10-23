@@ -92,10 +92,18 @@ h1{
     background: #f7f7f7;
     display: flex;
 }
+.descripcion{
+    background: #f7f7f7;
+    display: flex-end;
+}
 .departamento{
     background: #f7f7f7;
     flex: 2 1 auto;
     display: flex;
+    flex-flow: row wrap;
+}
+.vdepartamento{
+    background: #f7f7f7;
     flex-flow: row wrap;
 }
 .article{
@@ -183,6 +191,76 @@ h4{
     padding: 0 10px;
     letter-spacing: 10px;
 }
+
+#carrusel {
+    float:left;
+    width:700px;
+    overflow:hidden;
+    height:300px;
+    position:relative;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+ 
+#carrusel .left-arrow {
+    position:absolute;
+    left:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+}
+ 
+#carrusel .right-arrow {
+    position:absolute;
+    right:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+}
+ 
+.carrusel {
+    width:4000px;
+    left:0px;
+    position:absolute;
+    z-index:0;
+}
+ 
+.carrusel>div {
+    float: left;
+    height: 250px;
+    margin-right: 5px;
+    width: 300px;
+    text-align:center;
+}
+ 
+.carrusel img {
+    cursor:pointer;
+}
+
+#article {
+    color: #444;
+    padding: 10px;
+    background: #ececec;
+    margin: 10px 0;
+    display: inline-block; 
+    margin-bottom: 80px;
+}
+ 
+#rightD {
+    text-align: right;
+}
+
+.boton{
+    border: 1px solid #2e518b; 
+    padding: 10px; 
+    background-color: #2e518b; 
+    color: #ffffff; 
+    text-decoration: none; 
+    text-transform: uppercase; 
+    font-family: 'Helvetica', sans-serif; 
+    border-radius: 50px;
+}
+
 @media all and (max-width: 1120px){
     .section{
         flex-direction: column;
@@ -218,6 +296,15 @@ h4{
     }
     .aside img{
         width: 100%
+    }
+    #rightD{
+        text-align: center;
+    }
+    #carrusel {
+        width:590px;
+        height:300px;
+        margin-top:10px;
+        margin-bottom:10px;
     }
 }
 @media all and (max-width: 650px){
