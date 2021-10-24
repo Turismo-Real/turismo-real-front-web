@@ -6,3 +6,6 @@ def index(request):
 
 def department_view(request):
     return render(request, 'department_view.html')
+
+def department_reservation(request):
+    return render(request, 'department_reservation.html')
