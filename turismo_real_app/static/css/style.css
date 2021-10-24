@@ -345,15 +345,15 @@ h4{
 }
 
 .boton{
-    border: 1px solid #2e518b; 
-    padding: 10px; 
-    background-color: #2e518b; 
+    padding: 10px;  
     color: #ffffff; 
     text-decoration: none; 
     text-transform: uppercase; 
     font-family: 'Helvetica', sans-serif; 
     border-radius: 50px;
 }
+
+
 
 @media all and (max-width: 1120px){
     .section{
