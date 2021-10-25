@@ -18,7 +18,7 @@
             <header class="header ">
                 <div class="menu margen-interno">
                     <div class="logo">
-                        <a href=""><img src='{%static "imagenes/logo.png"%}' alt="logo" width="70px" height="70px"></a>
+                        <a href="index"><img src='{%static "imagenes/logo.png"%}' alt="logo" width="70px" height="70px"></a>
                     </div>
                     <div class="nav">
                         <a href="#">Inicio</a>
@@ -31,7 +31,7 @@
                     <div class="popup">
                         <div class="close-btn">&times;</div>
                         <div class="form">
-                            <h2>Log in</h2>
+                            <h2>Iniciar Sesión</h2>
                             <div class="form-element">
                                 <label for="email">Correo</label>
                                 <input type="text" id="email" placeholder="Ingresar Correo">
@@ -48,7 +48,7 @@
                                 <button>Iniciar Sesión</button>
                             </div>
                             <div class="form-element">
-                                <a href="#">Registrarse</a>
+                                <a href='vista registro usuario'>Registrarse</a>
                             </div>
                         </div>
                     </div>
@@ -118,6 +118,6 @@
                 </nav>
             </footer>
         </div>
-    <script src="{% static 'js/app.js' %}"></script>   
+        <script src="{% static 'js/app.js' %}"></script>   
     </body>
 </html>

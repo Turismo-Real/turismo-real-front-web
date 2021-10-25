@@ -9,3 +9,6 @@ def department_view(request):
 
 def department_reservation(request):
     return render(request, 'department_reservation.html')
+
+def register_user(request):
+    return render(request, 'register_user.html')
