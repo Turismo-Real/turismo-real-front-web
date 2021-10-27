@@ -411,8 +411,12 @@ h4{
     border-radius: 50px;
 }
 
-
-
+#Roption{
+    background: #f7f7f7;
+    flex: 2 1 auto;
+    display: flex;
+    flex-flow: row wrap;
+}
 
 @media all and (max-width: 1120px){
     .section{
