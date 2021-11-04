@@ -245,12 +245,20 @@ h1{
     background: #f7f7f7;
     display: flex;
 }
+.section2{
+    display: flex;
+}
 .descripcion{
     background: #f7f7f7;
     display: flex-end;
 }
 .departamento{
     background: #f7f7f7;
+    flex: 2 1 auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+.departamento2{
     flex: 2 1 auto;
     display: flex;
     flex-flow: row wrap;
@@ -280,6 +288,29 @@ h1{
     background: #444;
 }
 .article img{
+    width: 100%;
+}
+.article2{
+    flex: 1 1 40%;
+    color: #444;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 10px 20px 0 0px;
+    flex: 1 1 45%;
+    background: #ececec ;
+}
+.article2 a{
+    color: #fff;
+    font-size: 13px;
+    padding: 10px;
+    background: #000;
+    margin: 10px 0;
+    display: inline-block;
+}
+.article2 a:hover{
+    background: #444;
+}
+.article2 img{
     width: 100%;
 }
 h3{
@@ -318,6 +349,7 @@ h2{
     height: 250px;
 
 }
+
 h4{
     background: #000;
     color: #fff;
@@ -331,6 +363,11 @@ h4{
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
 }
 .pie{
     text-align: center;
@@ -420,7 +457,7 @@ h4{
 }
 
 @media all and (max-width: 1120px){
-    .section{
+    .section2{
         flex-direction: column;
     }
     .menu{
@@ -443,10 +480,13 @@ h4{
     .texto-principal{
         height: 450px;
     }
-    
+    .aside{
+        display:none !important;
+    }
+ 
 }
 @media all and (max-width: 762px){
-    .departamento{
+    .departamento2{
         flex-direction: column;
     }
     .aside{
@@ -464,10 +504,23 @@ h4{
         margin-top:10px;
         margin-bottom:10px;
     }
+    .aside{
+        display:none !important;
+    }
+   
 }
 @media all and (max-width: 650px){
+  
     .aside{
-        flex-direction: column;
+        display:none !important;
+    }
+
+    .pie a{
+        font-size: 9px;
+    }
+    
+    .article2{
+        margin-bottom: 30px
     }
     
 }

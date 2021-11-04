@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Turismo Real</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+        <link type='text/css' href='{%static "css/style.css"%}' rel='stylesheet'/>
+        
+    </head>
+    <body>
+        <div class="padre">
+            <header class="header ">
+                <div class="menu margen-interno">
+                    <div class="logo">
+                        <a href="index"><img src='{%static "imagenes/logo.png"%}' alt="logo" width="70px" height="70px"></a>
+                    </div>
+                    <div class="nav">
+                        <a href="#">Inicio</a>
+                        <a href="#">Inicio</a>
+                        <a href="#">Inicio</a>
+                    </div>
+                    <div class="login">
+                        <a href="#" id="show-login">Cerrar Sesión</a>
+                    </div>
+                    
+                </div>
+            </header>
+            <section class="section2 margen-interno">
+                <div class="departamento2">
+                    <article class="article2">
+                        <img src='{%static "imagenes/checkin.jpg"%}' alt="checkin" width="500px" height="281px">
+                        <h3></h3>
+                        <h2>Módulo Check-in / Check-out</h2>
+                        <br>
+                        <br>
+                        <p>Este módulo permite cargar el check-in y el check-out de los departamentos reservados.</p>
+                        <br>
+                        <br>
+                        <br>
+                        <a href="#">Ver Módulo</a>
+                    </article>
+                    <article class="article2">
+                        <img src='{%static "imagenes/estado.jpg"%}' alt="checkout" width="500px" height="281px">
+                        <h3></h3>
+                        <h2>Módulo Estado</h2>
+                        <br>
+                        <br>
+                        <p>Este módulo permite ingresar el estado de los departamentos reservados.</p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <a href="#">Ver módulo</a>
+                    </article>
+                    
+                </div>
+                <aside class="aside">
+                    <div class="nose">
+                        <h4>Información</h4>
+                        <p>Nombre: Usuario Funcionario</p>
+                        <p>Correo: usuario.funcionario@gmail.com</p>
+                        <p>Contacto: +56912324224</p>
+                    </div>
+                    
+                </aside>
+            </section>
+            <footer class="footer margen-interno">
+                <nav class="pie">
+                    <a href="#">Desarrollado por Nadie</a>
+                </nav>
+            </footer>
+        </div>
+        <script src="{% static 'js/app.js' %}"></script>   
+    </body>
+</html>

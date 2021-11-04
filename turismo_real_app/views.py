@@ -12,3 +12,9 @@ def department_reservation(request):
 
 def register_user(request):
     return render(request, 'register_user.html')
+
+def cliente(request):
+    return render(request, 'client.html')
+    
+def funcionario(request):
+    return render(request, 'funcionario.html')
