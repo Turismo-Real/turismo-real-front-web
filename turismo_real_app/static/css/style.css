@@ -22,7 +22,18 @@
     transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, top 20ms ease-in-out 0ms;
 }
 
-.login button{
+.logout button{
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600px;
+    color: #222;
+    background: #f5f5f5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.logout button{
     padding: 10px 20px;
     font-size: 15px;
     font-weight: 600px;
@@ -212,14 +223,14 @@ a:hover{
     font-size: 15px;
 }
 
-.login{
+.logout{
     
     flex: 1 1 auto;
     display: flex;
     
 }
 
-.login a{
+.logout a{
     padding: 0 5px;
     outline: none;
     cursor: pointer;
@@ -468,7 +479,7 @@ h4{
         display: flex;
         justify-content: center;
     }
-    .login a{
+    .logout a{
     
         flex: 1 1 auto;
         display: flex;
