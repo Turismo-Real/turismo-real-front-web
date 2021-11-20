@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.http.response import HttpResponseGone
 from django.shortcuts import render
 
 def index(request):
@@ -18,3 +19,12 @@ def cliente(request):
     
 def funcionario(request):
     return render(request, 'funcionario.html')
+
+async def login(request):
+    correo = request.POST['correo']
+    passwd = request.POST['hashedPassword']
+
+    print(correo)
+    print(passwd)
+
+    return render(request, 'index.html')
