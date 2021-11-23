@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'turismo_real_app',
+    'turismo_real_services',
 ]
 
 MIDDLEWARE = [

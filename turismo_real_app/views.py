@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.http.response import HttpResponseGone
 from django.shortcuts import render, redirect
-import requests
+from turismo_real_services.login_service import login_request
 
 def index(request):
     return render(request, 'index.html')
@@ -34,15 +34,3 @@ async def login(request):
             login_response = redirect('funcionario')
         return login_response
     return render(request, 'index.html')
-
-# LLAMADAS A APIs
-def login_request(email, password):
-    URL_LOGIN = 'http://localhost:5000/api/v1/login'
-    _headers = { 'Content-Type': 'application/json' }
-    payload = {
-        'email': email, 
-        'password': password 
-    }
-    response = requests.post(URL_LOGIN, json=payload, headers=_headers)
-    json = response.json()
-    return json
