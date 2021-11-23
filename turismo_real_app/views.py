@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.http.response import HttpResponseGone
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import requests
 
 def index(request):
@@ -29,9 +29,10 @@ async def login(request):
     if response['login']:
         tipo = response['tipo'].upper()
         if tipo == 'CLIENTE':
-            return render(request, 'client.html')
+            login_response = redirect('cliente')
         elif tipo == 'FUNCIONARIO':
-            return render(request, 'funcionario.html')
+            login_response = redirect('funcionario')
+        return login_response
     return render(request, 'index.html')
 
 # LLAMADAS A APIs
