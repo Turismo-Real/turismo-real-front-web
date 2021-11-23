@@ -1,7 +1,7 @@
 import requests
+from turismo_real_services.url_services import URL_LOGIN
 
 def login_request(email, password):
-    URL_LOGIN = 'http://localhost:5000/api/v1/login'
     _headers = { 'Content-Type': 'application/json' }
     payload = {
         'email': email, 
