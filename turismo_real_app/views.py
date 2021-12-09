@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.http.response import HttpResponseGone
 from django.shortcuts import render, redirect
 from turismo_real_services.login_service import login_request
+from django.contrib import messages
 
 def index(request):
     return render(request, 'index.html')
@@ -20,8 +21,9 @@ def cliente(request):
     
 def funcionario(request):
     return render(request, 'funcionario.html')
-
-async def login(request):
+def contact(request):
+    return render(request, 'contact.html')
+def login(request):
     correo = request.POST['correo']
     passwd = request.POST['hashedPassword']
     response = login_request(correo, passwd)
@@ -29,8 +31,11 @@ async def login(request):
     if response['login']:
         tipo = response['tipo'].upper()
         if tipo == 'CLIENTE':
+            messages.success(request, 'Logueado Correctamente')
             login_response = redirect('cliente')
         elif tipo == 'FUNCIONARIO':
+            messages.success(request, 'Logueado Correctamente')
             login_response = redirect('funcionario')
         return login_response
+    messages.error(request, "Usuario Incorrecto")
     return render(request, 'index.html')

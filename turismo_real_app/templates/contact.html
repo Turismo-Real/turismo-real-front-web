@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Turismo Real</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+        <link type='text/css' href='{%static "css/style.css"%}' rel='stylesheet'/>
+        
+    </head>
+    <body>
+        <div class="padre">
+            <header class="header ">
+                <div class="menu margen-interno">
+                    <div class="logo">
+                        <a href="index"><img src='{%static "imagenes/logo.png"%}' alt="logo" width="70px" height="70px"></a>
+                    </div>
+                    <div class="nav">
+                        <a href="index">Inicio</a>
+                        <a href="contacto">Contacto</a>
+                        <a href="index">Quiénes Somos</a>
+                    </div>
+                    <div class="login">
+                        <a href="#" id="show-login">Login</a>
+                    </div>
+                    
+                </div>
+            </header>
+            <section class="section2 margen-interno">
+                <div class="departamento2">
+                    <article class="article2">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.613439918063!2d-70.61778338495249!3d-33.43332108077887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf7b8af466fd%3A0xc8fd2d768e783103!2sDuoc%20UC%3A%20Antonio%20Varas!5e0!3m2!1ses-419!2scl!4v1638997338644!5m2!1ses-419!2scl" width="1420" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <div class="nose">
+                            <h4>Contacto de Empresa</h4>
+                            <br>
+                            <p>Nadie Ltda</p>
+                            <br>
+                            <p>nadiesoluciones@gmail.com</p>
+                            <br>
+                            <p>+56912324224</p>
+                        </div>
+                        
+                    </article>
+                </div>
+               
+            </section>
+            <footer class="footer margen-interno">
+                <nav class="pie">
+                    <a href="#">Desarrollado por Nadie</a>
+                </nav>
+            </footer>
+        </div>
+        <script src="{% static 'js/app.js' %}"></script>   
+    </body>
+</html>

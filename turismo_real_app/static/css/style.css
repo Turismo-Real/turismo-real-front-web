@@ -78,6 +78,7 @@
     color: #222;
 }
 .popup .form .form-element input[type="text"],
+.popup .form .form-element input[type="email"],
 .popup .form .form-element input[type="password"]{
     margin-top: 5px;
     display: block;
@@ -466,6 +467,8 @@ h4{
     display: flex;
     flex-flow: row wrap;
 }
+/* --- formulario de contacto --- */
+
 
 @media all and (max-width: 1120px){
     .section2{

@@ -8,5 +8,6 @@ urlpatterns = [
     path('vista registro usuario', views.register_user, name='register_user'),
     path('cliente', views.cliente, name='cliente'),
     path('funcionario', views.funcionario, name='funcionario'),
+    path('contacto', views.contact, name='contact'),
     path('login', views.login, name='login'),
 ]
