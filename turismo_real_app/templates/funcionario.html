@@ -21,9 +21,9 @@
                         <a href="index"><img src='{%static "imagenes/logo.png"%}' alt="logo" width="70px" height="70px"></a>
                     </div>
                     <div class="nav">
-                        <a href="#">Inicio</a>
-                        <a href="#">Inicio</a>
-                        <a href="#">Inicio</a>
+                        <a href="index">Inicio</a>
+                        <a href="contacto">Contacto</a>
+                        <a href="index">Quiénes Somos</a>
                     </div>
                     <div class="logout">
                         <a href="#" id="show-logout">Cerrar Sesión</a>
@@ -76,6 +76,30 @@
                 </nav>
             </footer>
         </div>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        {% if messages %}
+            {% for message in messages %}
+                <script>
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                    })
+
+                    Toast.fire({
+                    icon: 'success',
+                    title: '{{message}}'
+                    })
+                        
+                </script>
+            {% endfor %}
+        {% endif %}
         <script src="{% static 'js/app.js' %}"></script>   
     </body>
 </html>

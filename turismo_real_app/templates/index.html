@@ -105,6 +105,9 @@
                         <a href="#">4</a>
                         <a href="#">Final</a>
                     </nav>
+                    <br>
+                    <br>
+                    <br>
                 </div>
                 <aside class="aside">
                     <div class="nose">
@@ -145,6 +148,30 @@
 
                     Toast.fire({
                     icon: 'error',
+                    title: '{{message}}'
+                    })
+                        
+                </script>
+            {% endfor %}
+        {% endif %}
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        {% if messages %}
+            {% for message in messages %}
+                <script>
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                    })
+
+                    Toast.fire({
+                    icon: 'success',
                     title: '{{message}}'
                     })
                         

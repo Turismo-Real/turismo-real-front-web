@@ -31,11 +31,14 @@ def login(request):
     if response['login']:
         tipo = response['tipo'].upper()
         if tipo == 'CLIENTE':
-            messages.success(request, 'Logueado Correctamente')
+            messages.success(request, "Logueado Correctamente")
+            return render(request, 'client.html')
             login_response = redirect('cliente')
         elif tipo == 'FUNCIONARIO':
-            messages.success(request, 'Logueado Correctamente')
+            messages.success(request, "Logueado Correctamente")
+            return render(request, 'funcionario.html')
             login_response = redirect('funcionario')
-        return login_response
-    messages.error(request, "Usuario Incorrecto")
+        messages.error(request, "Ha ocurrido un problema, vuelva a intentarlo")
+        return render(request, 'index.html')
     return render(request, 'index.html')
+
