@@ -1,0 +1,110 @@
+{% load static %}
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Turismo Real - Pago</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+        <link type='text/css' href='{%static "css/style.css"%}' rel='stylesheet'/>
+    </head>
+    <body bgcolor="#eebd1b"> 
+        <header class="header ">
+            <div class="menu margen-interno">
+                <div class="logo">
+                    <a href=""><img src='{%static "imagenes/logo.png"%}' alt="logo" width="70px" height="70px"></a>
+                </div>
+                <div class="nav">
+                    <a href="#">Inicio</a>
+                    <a href="#">Departamento</a>
+                    <a href="#">Reserva</a>
+                </div>
+                <div class="social">
+                    <div><a href="#">Cerrar Sesion</a></div>
+                </div>
+            </div>
+        </header>
+        <div class="padre">
+            <section class="section margen-interno">
+                <div class="vdepartamento" >
+                    <article>
+                        <div class="form">
+                            <div>
+                                <a href="#" id="show-pay" > <img src='{%static "imagenes/pay.png"%}' alt="logo" width="50px" height="45px">asfihsakfhaskfh</a><br>
+                                <br>
+                            </div>
+                            <div>
+                                <a href="#" id="show-webPay" class> <img src='{%static "imagenes/web-pay.png"%}' alt="logo" width="55px" height="45px">asfihsakafagdgfhaskfh</a>
+                                <br>
+                            </div>
+                            <br>
+                        </div>
+                    </article>
+                </div>
+                <div id="pay">
+                    <h2>Pago Credito</h2>
+                    <div class="form-element">
+                        <label for="email">Nombre Completo</label><br>
+                        <input name="correo" type="text" id="name" placeholder="Javier Trujillo"><br><br>
+                    </div>
+                    <div class="form-element">
+                        <label for="email">Número de tarjeta</label><br>
+                        <input name="correo" type="text" id="card" placeholder="XXXX-XXXX-XXXX"><br><br>
+                    </div>
+                    <div class="form-element">
+                        <label for="email">Fecha de expiracion</label><br>
+                        <input name="correo" type="text" id="D_E" placeholder="12/00"><br><br>
+                    </div>
+                    <div class="form-element">
+                        <label for="email">CVV</label><br>
+                        <input name="correo" type="text" id="CVV" placeholder="XXX"><br><br>
+                    </div>
+                    <div class="form-element">
+                        <a class="boton" href="#" style="background-color: #36ec6d; border: 1px solid #36ec6d; text-align: middle;" >Pagar</a>
+                    </div>
+                </div>
+
+                <div id="webPay">
+                    <h2>Pago Debito</h2>
+                    <div class="form-element">
+                        <label for="email">Nombre Completo</label><br>
+                        <input name="correo" type="text" id="name" placeholder="Javier Trujillo"><br><br>
+                    </div>
+                    <div class="form-element">
+                        <label for="email">Rut</label><br>
+                        <input name="correo" type="text" id="Rut" placeholder="17564231-K"><br><br>
+                    </div>
+                    <div class="form-element">
+                        <a class="boton" href="#" style="background-color: #36ec6d; border: 1px solid #36ec6d; text-align: middle;" >Pagar</a>
+                    </div>
+                </div>
+            </section>
+            <footer class="footer margen-interno">
+                <nav class="pie">
+                    <a href="#">Desarrollado por Nadie</a>
+                </nav>
+            </footer>
+        </div>
+        <script src="{% static 'js/app.js' %}"></script>
+        <script>
+
+            $('#show-pay').click(function(e) {
+              
+                $('#pay').css('display', 'inline-block');
+                $('#webPay').css('display', 'none');
+            });
+            
+            $('#show-webPay').click(function(e) {
+              
+              $('#pay').css('display', 'none');
+              $('#webPay').css('display', 'inline-block');
+            });
+            </script>
+    </body>
+</html>

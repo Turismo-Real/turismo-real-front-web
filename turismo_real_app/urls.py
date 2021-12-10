@@ -13,4 +13,5 @@ urlpatterns = [
     path('checkin', views.funcionario_checkin, name='funcionario_checkin'),
     path('contacto', views.contact, name='contact'),
     path('login', views.login, name='login'),
+    path('pago', views.payment, name='pago'),
 ]
