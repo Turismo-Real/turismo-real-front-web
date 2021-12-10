@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Turismo Real</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+        <link type='text/css' href='{%static "css/style.css"%}' rel='stylesheet'/>
+    </head>
+    <body>
+        <div class="padre">
+            <header class="header ">
+                <div class="menu margen-interno">
+                
+                    <div class="logo">
+                        <a href="index"><img src='{%static "imagenes/logo.png"%}' alt="logo" width="70px" height="70px"></a>
+                    </div>
+                    <div class="nav">
+                        <a href="index">Inicio</a>
+                        <a href="contacto">Contacto</a>
+                        <a href="index">Quiénes Somos</a>
+                    </div>
+                    <div class="login">
+                        <a href="#" id="show-login">Login</a>
+                    </div>
+
+
+                </div>
+                
+            </header>
+            <div class="registro">
+                <!-- POP UP LOGIN -->
+                    
+                {% block register %}
+                <form class="register" id="registerForm">
+                    {% csrf_token %}
+                    <div class="form">
+                        <h2>Registrarse</h2>
+                        <!-- Izquierda -->
+                        <div class="form-element one-half">
+                            <label for="checkin">Check-in</label>
+                            <input type="text" id="checkin" placeholder="Subir check-in">
+                        </div>
+                        <div class="form-element">
+                            <button type="submit">Subir Check-in</button>
+                        </div>
+                        <div class="form-element one-half">
+                            <label for="check-out">Check-out</label>
+                            <input type="text" id="check-out" placeholder="Subir check-out">
+                        </div>
+                        <div class="form-element">
+                            <button type="submit">Subir Check-out</button>
+                        </div>
+                    </div>
+                    
+                </form>
+                {% endblock %}
+                <!-- POP UP LOGIN -->
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            
+        </div>
+        <footer class="footer margen-interno">
+            <nav class="pie">
+                <a href="#">Desarrollado por Nadie</a>
+            </nav>
+        </footer>
+        <script src="{% static 'js/app.js' %}"></script>   
+         
+    </body>
+</html>

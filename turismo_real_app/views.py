@@ -16,11 +16,19 @@ def department_reservation(request):
 def register_user(request):
     return render(request, 'register_user.html')
 
+def modificar_usuario(request):
+    return render(request, 'modificar_user.html')
+def cancerlar_reserva(request):
+    return render(request, 'reserva.html')
 def cliente(request):
     return render(request, 'client.html')
     
 def funcionario(request):
     return render(request, 'funcionario.html')
+def funcionario_estado(request):
+    return render(request, 'funcionario_estado.html')
+def funcionario_checkin(request):
+    return render(request, 'checkin.html')    
 def contact(request):
     return render(request, 'contact.html')
 def login(request):

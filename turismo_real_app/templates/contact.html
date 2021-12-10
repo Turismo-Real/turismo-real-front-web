@@ -17,6 +17,7 @@
         <div class="padre">
             <header class="header ">
                 <div class="menu margen-interno">
+                
                     <div class="logo">
                         <a href="index"><img src='{%static "imagenes/logo.png"%}' alt="logo" width="70px" height="70px"></a>
                     </div>
@@ -28,7 +29,39 @@
                     <div class="login">
                         <a href="#" id="show-login">Login</a>
                     </div>
+
+                    <!-- POP UP LOGIN -->
                     
+                    {% block login %}
+                    <form class="popup" action="{% url 'login' %}" method="POST" id="loginForm">
+                        <div class="close-btn">&times;</div>
+                        {% csrf_token %}
+                        <div class="form">
+                            <h2>Iniciar Sesión</h2>
+                            <div class="form-element">
+                                <label for="email">Correo</label>
+                                <input name="correo" type="email" id="email" placeholder="Ingresar Correo" required>
+                            </div>
+                            <div class="form-element">
+                                <label for="password">Contraseña</label>
+                                <input name="password" type="password" id="password" placeholder="Ingresar Contraseña" required>
+                            </div>
+                            <div class="form-element">
+                                <input type="checkbox" id="remember-meme">
+                                <label for="remember-me">Recuerdame</label>
+                            </div>
+                            <div class="form-element">
+                                <button type="submit">Iniciar Sesión</button>
+                            </div>
+                            <div class="form-element">
+                                <a href='vista registro usuario'>Registrarse</a>
+                            </div>
+                        </div>
+                        
+                    </form>
+                    {% endblock %}
+                    <!-- POP UP LOGIN -->
+
                 </div>
             </header>
             <section class="section2 margen-interno">

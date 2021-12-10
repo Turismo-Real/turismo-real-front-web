@@ -26,21 +26,19 @@
                         <a href="index">Quiénes Somos</a>
                     </div>
                     <div class="login">
-                        <a href="#" id="show-login">Login</a>
+                        <a href="#" id="show-login">Cerrar Sesión</a>
                     </div>
-
-
                 </div>
                 
             </header>
             <div class="registro">
                 <!-- POP UP LOGIN -->
                     
-                {% block register %}
-                <form class="register" id="registerForm">
+                {% block modificar %}
+                <form class="modificar"  id="modificarForm">
                     {% csrf_token %}
                     <div class="form">
-                        <h2>Registrarse</h2>
+                        <h2>Modificar Datos</h2>
                         <!-- Izquierda -->
                         <div class="form-element one-half">
                             <label for="pasaporte">Pasaporte</label>
@@ -368,13 +366,12 @@
                             <input type="text" id="nCasa" placeholder="Ingresar Nro Casa">
                         </div>
                         <div class="form-element">
-                            <button type="submit">Registrarse</button>
+                            <button type="submit">Modificar Datos</button>
                         </div>
                     </div>
                     
                 </form>
                 {% endblock %}
-                <!-- POP UP LOGIN -->
                 <br>
                 <br>
                 <br>
