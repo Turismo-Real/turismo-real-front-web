@@ -18,6 +18,9 @@ def register_user(request):
 
 def cliente(request):
     return render(request, 'client.html')
+
+def payment(request):
+    return render(request, 'Payment.html')
     
 def funcionario(request):
     return render(request, 'funcionario.html')

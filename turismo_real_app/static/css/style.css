@@ -469,6 +469,23 @@ h4{
 }
 /* --- formulario de contacto --- */
 
+#pay{
+    color: #444;
+    padding: 10px;
+    background: #ececec;
+    margin: 10px 0;
+    display: none; 
+    margin-bottom: 80px;
+}
+
+#webPay{
+    color: #444;
+    padding: 10px;
+    background: #ececec;
+    margin: 10px 0;
+    display: none; 
+    margin-bottom: 80px;
+}
 
 @media all and (max-width: 1120px){
     .section2{
